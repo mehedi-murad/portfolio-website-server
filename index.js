@@ -73,6 +73,11 @@ async function run() {
       const result = await galleryCollection.find({category: 'graphic'}).toArray()
       res.send(result)
     })
+    //getting ui gallery image
+    app.get('/gallery/logo', async(req, res) => {
+      const result = await galleryCollection.find({category: 'logo'}).toArray()
+      res.send(result)
+    })
 
     //getting testimonial data
     app.get('/testimonial', async(req, res) => {
